@@ -69,14 +69,6 @@ public class MainActivity extends Activity {
                                 movie.setThumbnailUrl(obj.getString("image"));
                                 movie.setPoints(obj.getString("points"));
 
-                                /*// Genre is json array
-                                JSONArray genreArry = obj.getJSONArray("genre");
-                                ArrayList<String> genre = new ArrayList<String>();
-                                for (int j = 0; j < genreArry.length(); j++) {
-                                    genre.add((String) genreArry.get(j));
-                                }
-                                movie.setGenre(genre);*/
-
                                 // adding movie to movies array
                                 movieList.add(movie);
 
