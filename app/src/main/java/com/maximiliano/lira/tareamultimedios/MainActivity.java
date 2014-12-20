@@ -2,7 +2,7 @@ package com.maximiliano.lira.tareamultimedios;
 
 import com.maximiliano.lira.tareamultimedios.adater.CustomListAdapter;
 import com.maximiliano.lira.tareamultimedios.app.AppController;
-import com.maximiliano.lira.tareamultimedios.model.Movie;
+import com.maximiliano.lira.tareamultimedios.model.Parser;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,7 +31,7 @@ public class MainActivity extends Activity {
     // Movies json url
     private static final String url = "http://www.mocky.io/v2/5440667984d353f103f697c0";
     private ProgressDialog pDialog;
-    private List<Movie> movieList = new ArrayList<Movie>();
+    private List<Parser> parserList = new ArrayList<Parser>();
     private ListView listView;
     private CustomListAdapter adapter;
 
@@ -41,7 +41,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         listView = (ListView) findViewById(R.id.list);
-        adapter = new CustomListAdapter(this, movieList);
+        adapter = new CustomListAdapter(this, parserList);
         listView.setAdapter(adapter);
 
         pDialog = new ProgressDialog(this);
@@ -64,13 +64,13 @@ public class MainActivity extends Activity {
                             try {
 
                                 JSONObject obj = response.getJSONObject(i);
-                                Movie movie = new Movie();
-                                movie.setTitle(obj.getString("title"));
-                                movie.setThumbnailUrl(obj.getString("image"));
-                                movie.setPoints(obj.getString("points"));
+                                Parser parser = new Parser();
+                                parser.setTitle(obj.getString("title"));
+                                parser.setThumbnailUrl(obj.getString("image"));
+                                parser.setPoints(obj.getString("points"));
 
-                                // adding movie to movies array
-                                movieList.add(movie);
+                                // adding parser to movies array
+                                parserList.add(parser);
 
                             } catch (JSONException e) {
                                 e.printStackTrace();

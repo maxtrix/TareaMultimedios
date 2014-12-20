@@ -5,7 +5,7 @@ package com.maximiliano.lira.tareamultimedios.adater;
  */
 import com.maximiliano.lira.tareamultimedios.R;
 import com.maximiliano.lira.tareamultimedios.app.AppController;
-import com.maximiliano.lira.tareamultimedios.model.Movie;
+import com.maximiliano.lira.tareamultimedios.model.Parser;
 
 import java.util.List;
 
@@ -23,22 +23,22 @@ import com.android.volley.toolbox.NetworkImageView;
 public class CustomListAdapter extends BaseAdapter {
     private Activity activity;
     private LayoutInflater inflater;
-    private List<Movie> movieItems;
+    private List<Parser> parserItems;
     ImageLoader imageLoader = AppController.getInstance().getImageLoader();
 
-    public CustomListAdapter(Activity activity, List<Movie> movieItems) {
+    public CustomListAdapter(Activity activity, List<Parser> parserItems) {
         this.activity = activity;
-        this.movieItems = movieItems;
+        this.parserItems = parserItems;
     }
 
     @Override
     public int getCount() {
-        return movieItems.size();
+        return parserItems.size();
     }
 
     @Override
     public Object getItem(int location) {
-        return movieItems.get(location);
+        return parserItems.get(location);
     }
 
     @Override
@@ -64,7 +64,7 @@ public class CustomListAdapter extends BaseAdapter {
 
 
         // getting movie data for the row
-        Movie m = movieItems.get(position);
+        Parser m = parserItems.get(position);
 
         // thumbnail image
         thumbNail.setImageUrl(m.getThumbnailUrl(), imageLoader);

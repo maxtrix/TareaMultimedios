@@ -3,16 +3,16 @@ package com.maximiliano.lira.tareamultimedios.model;
 /**Metodos para retornar los valores dentro del json
  * Created by max on 19-12-14.
  */
-import java.util.ArrayList;
 
-public class Movie {
+
+public class Parser {
     private String title, thumbnailUrl;
     private String points;
 
-    public Movie() {
+    public Parser() {
     }
 
-    public Movie(String name, String thumbnailUrl, String points) {
+    public Parser(String name, String thumbnailUrl, String points) {
         this.title = name;
         this.thumbnailUrl = thumbnailUrl;
         this.points = points;
